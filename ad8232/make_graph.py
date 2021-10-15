@@ -36,7 +36,7 @@ def update(value):
 
     QtGui.QApplication.processEvents()  # you MUST process the plot now
 
-ser = serial.Serial('COM8')
+ser = serial.Serial('COM7')
 
 data = []
 times = []
@@ -47,7 +47,7 @@ curve = p.plot()
 windowWidth = 500  # width of the window displaying the curve
 x = np.linspace(0, 0, windowWidth)  # create array that will contain the relevant time series
 ptr = -windowWidth  # set first x position
-f = open('data.txt', 'wb')
+f = open('data.txt', 'wb', buffering=4096)
 ft = open('tdata.txt', 'w')
 
 while True:
@@ -58,7 +58,7 @@ while True:
         # start QT application to see plot
         update(ser_bytes)
         f.write(ser_bytes)
-        ft.write(str(datetime.datetime.now()))
+        ft.write(str(datetime.datetime.now())+'\n')
 
     except(KeyboardInterrupt):
         ser.close()

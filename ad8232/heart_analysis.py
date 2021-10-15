@@ -9,8 +9,7 @@ from plotly.offline import plot as htmlplot
 import plotly.graph_objects as go
 import pandas as pd
 
-# %% Import in file, make basic plotly graph
-
+# %%
 timedatafile = open("tdata.txt", "r")
 timedata = timedatafile.read()
 timedatafile.close()
@@ -18,10 +17,17 @@ split_strings = []
 n = 26
 for index in range(0, len(timedata), n):
     split_strings.append(timedata[index : index + n])
-
 data = pd.read_csv('data.txt', names=['data'])
 data = data.replace('!', '0')
 data['Time'] = pd.to_datetime(pd.Series(split_strings))
+data.to_csv('test.csv')
+
+# %%
+data = pd.read_csv('serial_20211014_220221.txt', delimiter=' ', names=['Time', 'data']).fillna(0)
+# %% from normal csv
+data = pd.read_csv('2012-10-12_1h_sleep.csv')
+
+# %%
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=data['Time'], y=data['data'].astype(int)))
 fig.update_yaxes(range=[0, 700])
