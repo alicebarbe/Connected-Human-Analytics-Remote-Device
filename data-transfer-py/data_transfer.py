@@ -3,9 +3,10 @@ import struct
 import pandas as pd
 from datetime import datetime
 import zlib
-import h5py
+import time
+#import h5py
 
-portName = 'COM5'
+portName = 'COM3'
 structString = '!IIIB'
 structSize = struct.calcsize(structString)
 HEADER = 0xFFCCFFCC
@@ -14,7 +15,11 @@ def main():
     packetCorrupt = 0
     packetGood = 0
     ser = serial.Serial(portName)
-    ser.write(str.encode('\x00')) # write one byte to start the daq
+    print('taking a quick nap...')
+    time.sleep(3)
+    #ser.write(str.encode('\x00')) # write one byte to start the daq
+    ser.write(b'0')
+    print('starting now!')
     start_time = datetime.now()
     # ser.read(4) # intentionally insert offset
     while True:
