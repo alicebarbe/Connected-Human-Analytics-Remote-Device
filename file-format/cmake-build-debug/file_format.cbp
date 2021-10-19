@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="file_format"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j24 -f &quot;/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j24 -f &quot;/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j24 -f &quot;/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j24 -f &quot;/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j24 -f &quot;/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j24 -f &quot;/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j24 -f &quot;/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j24 -f &quot;/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j24 -f &quot;/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j24 -f &quot;/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j24 -f &quot;/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j24 -f &quot;/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="file_format">
+				<Option output="/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/libfile_format.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j24 -f &quot;/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/Makefile&quot;  VERBOSE=1 file_format"/>
+					<CompileFile command="/usr/bin/make -j24 -f &quot;/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j24 -f &quot;/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j24 -f &quot;/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="file_format/fast">
+				<Option output="/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/libfile_format.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j24 -f &quot;/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/Makefile&quot;  VERBOSE=1 file_format/fast"/>
+					<CompileFile command="/usr/bin/make -j24 -f &quot;/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j24 -f &quot;/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j24 -f &quot;/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/library.c">
+			<Option target="file_format"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/library.h">
+			<Option target="file_format"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

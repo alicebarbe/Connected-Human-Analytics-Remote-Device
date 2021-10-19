@@ -1,0 +1,3 @@
+/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/Users/Asimm/Documents/GitHub/cqueue-embed/Connected-Human-Analytics-Remote-Device/file-format/cmake-build-debug/CMakeFiles/file_format.dir
