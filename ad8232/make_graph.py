@@ -8,6 +8,7 @@ Created on Tue Oct 12 09:56:50 2021
 #from plotly.offline import plot as htmlplot  # used to export as html
 #import plotly.graph_objects as go
 import pandas as pd
+import struct
 
 
 import os
@@ -36,34 +37,38 @@ def update(value):
 
     QtGui.QApplication.processEvents()  # you MUST process the plot now
 
-ser = serial.Serial('COM7')
+ser = serial.Serial('COM3', 9600)
 
 data = []
 times = []
-app = QtGui.QApplication([])
-win = pg.GraphicsWindow(title="Sideload")  # creates a window
-p = win.addPlot(title="Realtime plot")  # creates empty space for the plot in the window
-curve = p.plot()
+#app = QtGui.QApplication([])
+#win = pg.GraphicsWindow(title="Sideload")  # creates a window
+#p = win.addPlot(title="Realtime plot")  # creates empty space for the plot in the window
+#curve = p.plot()
 windowWidth = 500  # width of the window displaying the curve
 x = np.linspace(0, 0, windowWidth)  # create array that will contain the relevant time series
 ptr = -windowWidth  # set first x position
-f = open('data.txt', 'wb', buffering=4096)
-ft = open('tdata.txt', 'w')
+f = open('data5.txt', 'wb', buffering=4096)
+ft = open('tdata5.txt', 'w', buffering=4096)
 
 while True:
     try:
+        ser.write(b'a')
         ser_bytes = ser.readline()
+        #ser_bytes = struct.unpack('>ii', ser.read(struct.calcsize('ii')))
         data.append(ser_bytes)
-        times.append(datetime.datetime.now())
+        print(ser_bytes)
+        #times.append(datetime.datetime.now())
         # start QT application to see plot
-        update(ser_bytes)
-        f.write(ser_bytes)
-        ft.write(str(datetime.datetime.now())+'\n')
+        #update(ser_bytes)
+        #f.write(ser_bytes)
+        #ft.write(str(datetime.datetime.now())+'\n')
+
 
     except(KeyboardInterrupt):
         ser.close()
-        f.close()
-        ft.close()
-        QtGui.QApplication.closeAllWindows()
-        app.quit()
+        #f.close()
+        #ft.close()
+        #QtGui.QApplication.closeAllWindows()
+        #app.quit()
         sys.exit(0)
