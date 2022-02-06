@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chard">
         <activity
+            android:name=".AddEvent"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.Chard.NoActionBar">
