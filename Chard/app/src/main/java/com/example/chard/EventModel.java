@@ -1,15 +1,17 @@
 package com.example.chard;
 
-import java.time.LocalDateTime;
+import com.google.firebase.Timestamp;
+
+import java.util.Date;
 
 public class EventModel {
 
     private String event_name;
-    private LocalDateTime start_time;
-    private LocalDateTime end_time;
+    private Date start_time;
+    private Date end_time;
 
     // Constructor
-    public EventModel(String event_name, LocalDateTime start_time, LocalDateTime end_time) {
+    public EventModel(String event_name, Date start_time, Date end_time) {
         this.event_name = event_name;
         this.start_time = start_time;
         this.end_time = end_time;
@@ -24,19 +26,19 @@ public class EventModel {
         this.event_name = event_name;
     }
 
-    public LocalDateTime getStart_time() {
+    public Date getStart_time() {
         return start_time;
     }
 
-    public void setStart_time(LocalDateTime start_time) {
+    public void setStart_time(Date start_time) {
         this.start_time = start_time;
     }
 
-    public LocalDateTime getEnd_time() {
+    public Date getEnd_time() {
         return end_time;
     }
 
-    public void setEnd_time(LocalDateTime end_time) {
+    public void setEnd_time(Date end_time) {
         this.end_time = end_time;
     }
 }

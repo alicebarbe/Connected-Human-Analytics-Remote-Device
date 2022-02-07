@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "331061904327",
+    "project_id": "chard-50474",
+    "storage_bucket": "chard-50474.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:331061904327:android:6e5f34ef0a4849efb3cfe2",
+        "android_client_info": {
+          "package_name": "com.example.chard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "331061904327-tvtr597ot6butiaqqkl0srg094hurdjp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7fBPZQfo_zePS8HO9JDsoSpsxmsEEZ8A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "331061904327-tvtr597ot6butiaqqkl0srg094hurdjp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

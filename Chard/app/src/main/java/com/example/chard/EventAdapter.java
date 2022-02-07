@@ -9,9 +9,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.Viewholder> {
 
@@ -36,15 +38,15 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.Viewholder> 
     public void onBindViewHolder(@NonNull EventAdapter.Viewholder holder, int position) {
         // to set data to textview and imageview of each card layout
         EventModel model = eventModelArrayList.get(position);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         holder.eventName.setText(model.getEvent_name());
 
-        LocalDateTime startTime = model.getStart_time();
-        String formattedStartTime = startTime.format(formatter);
+        Date startTime = model.getStart_time();
+        String formattedStartTime = formatter.format(startTime);
         holder.startTime.setText(formattedStartTime);
 
-        LocalDateTime endTime = model.getEnd_time();
-        String formattedEndTime = endTime.format(formatter);
+        Date endTime = model.getEnd_time();
+        String formattedEndTime = formatter.format(endTime);
         holder.endTime.setText(formattedEndTime);
         //holder.courseIV.setImageResource(model.getCourse_image());
     }

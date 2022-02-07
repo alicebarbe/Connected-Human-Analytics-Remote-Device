@@ -4,9 +4,15 @@ import android.content.Intent;
 import android.media.metrics.Event;
 import android.os.Bundle;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -32,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         eventRV = findViewById(R.id.idRVCourse);
@@ -39,25 +47,32 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         eventModelArrayList = new ArrayList<>();
-        eventModelArrayList.add(new EventModel("Antidepressant pill",
-                LocalDateTime.of(2022, Month.JANUARY, 1, 9, 30),
-                LocalDateTime.of(2022, Month.JANUARY, 1, 9, 45)));
-        eventModelArrayList.add(new EventModel("Coffee",
-                LocalDateTime.of(2022, Month.JANUARY, 1, 10, 30),
-                LocalDateTime.of(2022, Month.JANUARY, 1, 10, 45)));
-        eventModelArrayList.add(new EventModel("Exercise",
-                LocalDateTime.of(2022, Month.JANUARY, 1, 11, 30),
-                LocalDateTime.of(2022, Month.JANUARY, 1, 11, 45)));
 
-        // we are initializing our adapter class and passing our arraylist to it.
-        EventAdapter courseAdapter = new EventAdapter(this, eventModelArrayList);
-
-        // below line is for setting a layout manager for our recycler view.
-        // here we are creating vertical list so we will provide orientation as vertical
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        // in below two lines we are setting layoutmanager and adapter to our recycler view.
-        eventRV.setLayoutManager(linearLayoutManager);
-        eventRV.setAdapter(courseAdapter);
+        db.collection("events")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                eventModelArrayList.add(new EventModel(document.getString("title"),
+                                        document.getTimestamp("starttime").toDate(),
+                                        document.getTimestamp("endtime").toDate()));
+                                Log.d("dbtest", document.getId() + " => " + document.getData());
+                                Log.d("dbtest", "title is " + document.getString("title"));
+                                Log.d("dbtest", "array is " + String.valueOf(eventModelArrayList));
+                            }
+                            // we are initializing our adapter class and passing our arraylist to it.
+                            EventAdapter courseAdapter = new EventAdapter(eventRV.getContext(), eventModelArrayList);
+                            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(eventRV.getContext(), LinearLayoutManager.VERTICAL, false);
+                            // in below two lines we are setting layoutmanager and adapter to our recycler view.
+                            eventRV.setLayoutManager(linearLayoutManager);
+                            eventRV.setAdapter(courseAdapter);
+                        } else {
+                            Log.w("dbtest", "Error getting documents.", task.getException());
+                        }
+                    }
+                });
 
         FloatingActionButton fab = findViewById(R.id.fab);
         /*fab.setOnClickListener(new View.OnClickListener() {

@@ -1,9 +1,11 @@
 package com.example.chard;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.app.TimePickerDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -72,5 +74,15 @@ public class AddEvent extends AppCompatActivity {
         timePickerDialog.setTitle("End Time");
         timePickerDialog.show();
     }
+
+    public void pushSubmitButton(View view) {
+        view.findViewById(R.id.buttonSubmit).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("dbtest",  startHour + " " + endHour);
+            }
+        });
+    }
+
 
 }
