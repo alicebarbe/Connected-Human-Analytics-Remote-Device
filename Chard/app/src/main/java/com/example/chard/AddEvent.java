@@ -10,9 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.Switch;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -31,14 +29,10 @@ public class AddEvent extends AppCompatActivity {
 
     Button startTimeButton;
     Button endTimeButton;
-    Switch instantaneousSwitch;
     private int startHour, startMin;
     private int endHour, endMin;
     private Date startDate, endDate;
-    private boolean startChanged = false;
-    private boolean endChanged = false;
     private String eventTitle;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,19 +50,6 @@ public class AddEvent extends AppCompatActivity {
         startMin = nowMinutes;
         endHour = nowHour;
         endMin = nowMinutes;
-        //instantaneousSwitch = findViewById(R.id.switchInstantaneous);
-        /*
-        instantaneousSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                // remove end time button if instantaneous switch is checked
-                if (isChecked) {
-                    endTimeButton.setVisibility(View.GONE);
-                } else {
-                    endTimeButton.setVisibility(View.VISIBLE);
-                }
-            }
-        });*/
     }
 
     public void popStartTimePicker(View view) {
@@ -78,7 +59,6 @@ public class AddEvent extends AppCompatActivity {
                 startHour = selectedHour;
                 startMin = selectedMinute;
                 startTimeButton.setText(String.format(Locale.getDefault(), "%02d:%02d", startHour, startMin));
-                startChanged = true;
 
                 endTimeButton.setText(String.format(Locale.getDefault(), "%02d:%02d", startHour, startMin));
                 endHour = startHour;
@@ -98,7 +78,6 @@ public class AddEvent extends AppCompatActivity {
                 endHour = selectedHour;
                 endMin = selectedMinute;
                 endTimeButton.setText(String.format(Locale.getDefault(), "%02d:%02d", endHour, endMin));
-                endChanged = true;
             }
         };
 
@@ -111,23 +90,12 @@ public class AddEvent extends AppCompatActivity {
         view.findViewById(R.id.buttonSubmit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText editTextTitle = (EditText) findViewById(R.id.editTextTitle);
+                EditText editTextTitle = findViewById(R.id.editTextTitle);
                 eventTitle = editTextTitle.getText().toString();
                 if (eventTitle.matches("")) {
                     Toast.makeText(view.getContext(), "You did not enter an event title", Toast.LENGTH_SHORT).show();
                     return;
-                } /*else if (!startChanged){
-                    Toast.makeText(view.getContext(), "You did not enter a start time", Toast.LENGTH_SHORT).show();
-                    return;
-                } *//*else if (!endChanged) {
-                    if (instantaneousSwitch.isChecked()) {
-                        endHour = startHour;
-                        endMin = startMin;
-                    } else {
-                        Toast.makeText(view.getContext(), "You did not enter an end time", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                }*/
+                }
 
                 // Create Date objects from start and end times
                 Calendar startCal = Calendar.getInstance();
