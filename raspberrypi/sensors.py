@@ -1,6 +1,5 @@
 try:
     import explorerhat
-    import json
     print("Import successful")
 except:
     print("Import failed")
